@@ -1,6 +1,8 @@
 // Shows that my script file is working all the time.
 console.log("Hello world!");
 
+import { renderCountriesList } from "./dom-utils.js";
+
 import { requiredDataType, responseDataType } from "./types.js";
 
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
@@ -21,7 +23,7 @@ const getAllCountries = (API_URL: string) => {
             flagUrl: country.flags.png,
           };
         });
-        return countries;
+        renderCountriesList(countries);
       });
   } catch (error) {
     console.log(error);
