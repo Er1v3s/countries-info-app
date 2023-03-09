@@ -1,25 +1,11 @@
 // Shows that my script file is working all the time.
 console.log("Hello world!");
 
+import { requiredDataType, responseDataType } from "./types.js";
+
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
 
 let countries: Array<object>;
-
-type responseDataType = {
-  capital: string;
-  population: number;
-  name: { common: string };
-  region: string;
-  flags: { png: string };
-};
-
-type requiredDataType = {
-  capital: string;
-  population: number;
-  name: string;
-  region: string;
-  flagUrl: string;
-};
 
 const getAllCountries = (API_URL: string) => {
   try {
