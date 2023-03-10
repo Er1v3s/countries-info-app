@@ -5,6 +5,8 @@ import { renderCountriesList } from "./dom-utils.js";
 
 import { requiredDataType, responseDataType } from "./types.js";
 
+import "./style.css";
+
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
 
 let countries: Array<object>;
