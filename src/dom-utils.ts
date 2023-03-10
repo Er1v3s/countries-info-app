@@ -4,8 +4,7 @@ const createFlageImgElement = (country: requiredDataType) => {
   const imgContainerElement: HTMLDivElement = document.createElement("div");
   const imgElement: HTMLImageElement = document.createElement("img");
   imgElement.src = country.flagUrl;
-  imgElement.width = 160;
-  imgElement.height = 98;
+  imgElement.alt = `${country.name} flag`;
 
   imgContainerElement.appendChild(imgElement);
 
@@ -29,17 +28,26 @@ const createInfoElement = (labelName: string, value: string) => {
 const createCountryItemElement = (country: requiredDataType) => {
   const countryElement: HTMLLIElement = document.createElement("li");
 
-  const countryNameElement: HTMLSpanElement = document.createElement("span");
+  countryElement.append(createFlageImgElement(country));
+
+  const infoContainerElement: HTMLDivElement = document.createElement("div");
+  infoContainerElement.classList.add("info-container");
+
+  const countryNameElement: HTMLSpanElement = document.createElement("strong");
+  countryNameElement.classList.add("country-name");
   countryNameElement.innerText! = country.name;
 
-  countryElement.append(createFlageImgElement(country));
-  countryElement.appendChild(countryNameElement);
+  infoContainerElement.appendChild(countryNameElement);
 
-  countryElement.appendChild(
+  infoContainerElement.appendChild(
     createInfoElement("Population", String(country.population))
   );
-  countryElement.appendChild(createInfoElement("Region", country.region));
-  countryElement.appendChild(createInfoElement("Capital", country.capital));
+  infoContainerElement.appendChild(createInfoElement("Region", country.region));
+  infoContainerElement.appendChild(
+    createInfoElement("Capital", country.capital)
+  );
+
+  countryElement.appendChild(infoContainerElement);
 
   return countryElement;
 };
