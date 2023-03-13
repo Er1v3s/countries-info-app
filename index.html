@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./src/style.css">
   <title>Countries</title>
 </head>
 
@@ -17,10 +17,26 @@
   <header>
     <div class="header-content">
       <h1>Where is the world?</h1>
-      <button>dark theme</button>
+      <button>Dark theme</button>
     </div>
   </header>
-  <main id="root"></main>
+
+  <nav>
+    <div class="filters">
+      <input type="text" id="query" placeholder="Search for the country">
+      <select name="region" id="region">
+        <option value="">Select region</option>
+        <option value="Europe">Europe</option>
+        <option value="America">America</option>
+        <option value="Africa">Africa</option>
+        <option value="Oceania">Oceania</option>
+      </select>
+    </div>
+  </nav>
+
+  <main id="root">
+
+  </main>
 
   <script type="module" src="/src/dom-utils.ts"></script>
   <script type="module" src="/src/App.ts"></script>
