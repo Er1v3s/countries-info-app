@@ -63,5 +63,6 @@ const createListElement = (countries: Array<object>) => {
 
 export const renderCountriesList = (countries: Array<object>) => {
   const rootElement: HTMLDivElement = document.querySelector("#root");
+  rootElement.innerHTML = "";
   rootElement.appendChild(createListElement(countries));
 };
