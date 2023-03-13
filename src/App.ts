@@ -10,6 +10,10 @@ import "./style.css";
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
 
 let countries: Array<object>;
+let query_country: string = "";
+let query_region: string = "";
+let search_result_country: object[] = [];
+let search_result_region: object[] = [];
 
 const getAllCountries = (API_URL: string) => {
   try {
@@ -35,14 +39,38 @@ const getAllCountries = (API_URL: string) => {
 getAllCountries(API_URL_ALL);
 
 document.querySelector("#query").addEventListener("input", (e) => {
-  const query: string = (e.target as HTMLInputElement).value
-    .toLowerCase()
-    .trim();
-  let search_result: object[];
+  query_country = (e.target as HTMLInputElement).value.toLowerCase().trim();
 
-  search_result = countries.filter((country: requiredDataType) =>
-    country.name.toLowerCase().includes(query)
-  );
+  if (query_region != "") {
+    search_result_country = countries.filter(
+      (country: requiredDataType) =>
+        country.name.toLowerCase().includes(query_country) &&
+        country.region === query_region
+    );
+  } else {
+    search_result_country = countries.filter((country: requiredDataType) =>
+      country.name.toLowerCase().includes(query_country)
+    );
+  }
 
-  renderCountriesList(search_result);
+  renderCountriesList(search_result_country);
+});
+
+document.querySelector("#region").addEventListener("change", (e) => {
+  query_region = (e.target as HTMLSelectElement).value;
+
+  if (query_country != "") {
+    search_result_region = countries.filter(
+      (country: requiredDataType) =>
+        country.region === query_region &&
+        country.name.toLowerCase().includes(query_country)
+    );
+  } else {
+    search_result_region = countries.filter(
+      (country: requiredDataType) => country.region === query_region
+    );
+  }
+
+  document.querySelector("#select_option").setAttribute("disabled", "true");
+  renderCountriesList(search_result_region);
 });
