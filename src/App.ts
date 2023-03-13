@@ -33,3 +33,16 @@ const getAllCountries = (API_URL: string) => {
 };
 
 getAllCountries(API_URL_ALL);
+
+document.querySelector("#query").addEventListener("input", (e) => {
+  const query: string = (e.target as HTMLInputElement).value
+    .toLowerCase()
+    .trim();
+  let search_result: object[];
+
+  search_result = countries.filter((country: requiredDataType) =>
+    country.name.toLowerCase().includes(query)
+  );
+
+  renderCountriesList(search_result);
+});
