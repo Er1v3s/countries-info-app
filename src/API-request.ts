@@ -14,7 +14,7 @@ export const getAllCountries = async (
       countries = data.map((country: responseDataType) => {
         return {
           capital: country.capital && country.capital[0],
-          population: country.population,
+          population: country.population.toLocaleString(),
           name: country.name.common,
           region: country.region,
           flagUrl: country.flags.png,

@@ -1,6 +1,6 @@
 export type requiredDataType = {
   capital: string;
-  population: number;
+  population: string;
   name: string;
   region: string;
   flagUrl: string;
