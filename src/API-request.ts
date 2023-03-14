@@ -1,8 +1,12 @@
-import { responseDataType, requiredDataType } from "./types";
+import {
+  responseDataType,
+  AllCountriesDataType,
+  IndyvidualCountryDataType,
+} from "./types";
 
-export const getAllCountries = async (
+export const getDataFromAPI = async (
   API_URL: string,
-  countries: requiredDataType[]
+  countries: IndyvidualCountryDataType[] | AllCountriesDataType[]
 ) => {
   try {
     const response: Response = await fetch(API_URL);
@@ -15,9 +19,14 @@ export const getAllCountries = async (
         return {
           capital: country.capital && country.capital[0],
           population: country.population.toLocaleString(),
+          code: country.cioc,
           name: country.name.common,
           region: country.region,
+          subregion: country.subregion,
           flagUrl: country.flags.png,
+          currencies: country.currencies && Object.keys(country.currencies)[0],
+          languages: country.languages && Object.keys(country.languages)[0],
+          tld: country.tld && country.tld[0],
         };
       });
     }
