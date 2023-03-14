@@ -1,19 +1,19 @@
 import { renderCountriesList } from "./dom-utils.js";
-import { requiredDataType } from "./types.js";
-import { getAllCountries } from "./API-request.js";
+import { AllCountriesDataType } from "./types.js";
+import { getDataFromAPI } from "./API-request.js";
 import { searchByName } from "./dashboard/searchByname.js";
 import { searchByRegion } from "./dashboard/searchByRegion.js";
 
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
 
 export const renderDashboard = async () => {
-  let countries: requiredDataType[];
+  let countries: AllCountriesDataType[];
   let countryName: string;
   let countryRegion: string;
-  let countriesSearchResult: requiredDataType[];
-  let regionSearchResult: requiredDataType[];
+  let countriesSearchResult: AllCountriesDataType[];
+  let regionSearchResult: AllCountriesDataType[];
 
-  const APIreponse: requiredDataType[] = await getAllCountries(
+  const APIreponse: AllCountriesDataType[] = await getDataFromAPI(
     API_URL_ALL,
     countries
   );
