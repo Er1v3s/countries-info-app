@@ -52,7 +52,7 @@ const createCountryItemElement = (country: requiredDataType) => {
   return countryElement;
 };
 
-const createListElement = (countries: Array<object>) => {
+const createListElement = (countries: requiredDataType[]) => {
   const listElement: HTMLUListElement = document.createElement("ul");
   countries.forEach((country: requiredDataType) => {
     listElement.appendChild(createCountryItemElement(country));
@@ -61,7 +61,7 @@ const createListElement = (countries: Array<object>) => {
   return listElement;
 };
 
-export const renderCountriesList = (countries: Array<object>) => {
+export const renderCountriesList = (countries: requiredDataType[]) => {
   const rootElement: HTMLDivElement = document.querySelector("#root");
   rootElement.innerHTML = "";
   rootElement.appendChild(createListElement(countries));
