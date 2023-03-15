@@ -1,8 +1,8 @@
-import { renderCountriesList } from "./dom-utils.js";
-import { AllCountriesDataType } from "./types.js";
-import { getDataFromAPI } from "./API-request.js";
-import { searchByName } from "./dashboard/searchByname.js";
-import { searchByRegion } from "./dashboard/searchByRegion.js";
+import { renderCountriesList } from "../dom-utils.js";
+import { AllCountriesDataType } from "../types.js";
+import { getDataFromAPI } from "../API-request.js";
+import { searchByName } from "./searchByname.js";
+import { searchByRegion } from "./searchByRegion.js";
 
 const API_URL_ALL: string = "https://restcountries.com/v3.1/all";
 

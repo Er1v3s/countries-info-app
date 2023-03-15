@@ -1,8 +1,8 @@
 // import { getUniqueCountry } from "./API-request";
 
-import { getDataFromAPI } from "./API-request";
-import { renderCountryDetails } from "./dom-utils";
-import { IndyvidualCountryDataType } from "./types";
+import { getDataFromAPI } from "../API-request";
+import { renderCountryDetails } from "../dom-utils";
+import { IndyvidualCountryDataType } from "../types";
 
 export const renderDetail = async () => {
   let countryDetails: IndyvidualCountryDataType[];
