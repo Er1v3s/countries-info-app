@@ -35,6 +35,5 @@ export const getDataFromAPI = async (
     console.log(`Error: ${err}`);
   }
 
-  console.log(countries);
   return countries;
 };

@@ -1,13 +1,13 @@
-import { requiredDataType } from "../types";
+import { AllCountriesDataType } from "../types";
 
 export const searchCountriesWithParams = (
   inputCountryValue: string,
   selectRegionValue: string,
-  APIresponse: requiredDataType[],
-  searchBy: requiredDataType[]
+  APIresponse: AllCountriesDataType[],
+  searchBy: AllCountriesDataType[]
 ) => {
   searchBy = APIresponse.filter(
-    (country: requiredDataType) =>
+    (country: AllCountriesDataType) =>
       country.region === selectRegionValue &&
       country.name.toLowerCase().includes(inputCountryValue)
   );
@@ -17,11 +17,11 @@ export const searchCountriesWithParams = (
 
 export const searchAllCountries = (
   queryType: string,
-  APIreponse: requiredDataType[],
-  searchBy: requiredDataType[]
+  APIreponse: AllCountriesDataType[],
+  searchBy: AllCountriesDataType[]
 ) => {
   searchBy = APIreponse.filter(
-    (country: requiredDataType) =>
+    (country: AllCountriesDataType) =>
       country.region === queryType ||
       country.name.toLowerCase().includes(queryType)
   );

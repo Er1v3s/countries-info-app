@@ -1,12 +1,12 @@
-import { requiredDataType } from "../types";
+import { AllCountriesDataType } from "../types";
 import { searchAllCountries, searchCountriesWithParams } from "./search";
 
 export const searchByName = (
   countryName: string,
   countryRegion: string,
-  countriesSearchResult: requiredDataType[],
-  regionSearchResult: requiredDataType[],
-  APIreponse: requiredDataType[]
+  countriesSearchResult: AllCountriesDataType[],
+  regionSearchResult: AllCountriesDataType[],
+  APIreponse: AllCountriesDataType[]
 ) => {
   if (countryRegion != "" && countryRegion != undefined) {
     countriesSearchResult = searchCountriesWithParams(
