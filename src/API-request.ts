@@ -27,6 +27,7 @@ export const getDataFromAPI = async (
           currencies: country.currencies && Object.keys(country.currencies)[0],
           languages: country.languages && Object.keys(country.languages)[0],
           tld: country.tld && country.tld[0],
+          borders: country.borders,
         };
       });
     }
@@ -34,5 +35,6 @@ export const getDataFromAPI = async (
     console.log(`Error: ${err}`);
   }
 
+  console.log(countries);
   return countries;
 };

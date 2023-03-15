@@ -18,6 +18,7 @@ export type IndyvidualCountryDataType = {
   currencies?: string;
   languages?: string;
   tld?: string;
+  borders?: [];
 };
 
 export type responseDataType = {
@@ -33,4 +34,5 @@ export type responseDataType = {
   currencies: object;
   languages: object;
   tld: string;
+  borders: [];
 };
