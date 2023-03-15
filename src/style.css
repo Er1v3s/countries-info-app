@@ -122,3 +122,69 @@ li img {
     gap: 30px;
   }
 }
+
+.detail-button {
+  background: transparent;
+  box-shadow: 0 0 10px -5px rgba(66, 68, 90);
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+  color: var(--color-text);
+  display: inline-block;
+  padding: 5px 30px;
+  margin: 5px 10px;
+  text-decoration: none;
+}
+
+.detail-button:first-child {
+  margin: 0;
+}
+
+.detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detail-name {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.border-countries-container {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+@media only screen and (max-width: 1000px) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .detail-container {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .detail-content {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  ul {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
