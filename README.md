@@ -1,8 +1,13 @@
-1. Setup
-2. Data fetching
-3. Country thumbnail component
-4. Filters
-5. Finialize styling
-6. Routing -> detail
-7. Detail components
-8. Dark theme
+## Live preview - **https://er1v3s.github.io/weather-app**
+
+# Vanilla TypeScript countries informations project
+
+## Available Scripts
+
+In the project directory run scripts:
+
+### `npm run dev` - to start dev serve
+
+### `npm run build` - to build project
+
+### `npm run preview` - to run build project preview
